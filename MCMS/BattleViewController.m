@@ -35,21 +35,14 @@
     /**
      *  Initialize player 2;
      */
-    self.fighter2 = self.fighters[[self choosePlayer2]];
+    NSInteger player = arc4random()% self.fighters.count;
+    self.fighter2 = self.fighters[player];
     self.playerTwoName.text = self.fighter2.name;
     self.player2.image = self.fighter2.creatImage;
 
     self.fightButton.layer.cornerRadius = 3;
 
 }
-
-#pragma mark - Randomizer
-- (NSInteger)choosePlayer2 {
-    //Random number between the count of the array. Returns the player on the index of the number.
-    NSInteger player = arc4random()% self.fighters.count;
-    return player;
-}
-
 
 #pragma mark - Actions
 - (IBAction)onCloseButtonTapped:(id)sender {
