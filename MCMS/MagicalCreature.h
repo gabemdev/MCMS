@@ -12,7 +12,6 @@
 @interface MagicalCreature : NSObject
 @property NSString *name;
 @property NSString *creatureDescription;
-@property NSString *creatureImage;
 @property UIImage *creatImage;
 @property NSMutableArray *accessories;
 @property BOOL isSelected;

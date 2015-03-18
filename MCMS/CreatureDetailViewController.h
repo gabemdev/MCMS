@@ -14,7 +14,6 @@
 @property NSMutableArray *creatures;
 @property NSIndexPath *index;
 
-@property BOOL didSelect;
 
 
 

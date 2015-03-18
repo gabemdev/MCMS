@@ -96,7 +96,7 @@
 #pragma mark - Actions
 
 - (IBAction)onAddButtonTapped:(id)sender {
-    if ([self.nameTextField.text isEqualToString:@""]) {
+    if ([self.nameTextField.text isEqualToString:@""] || [self.descriptionTextField.text isEqualToString:@""]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter name and description" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     } else {
