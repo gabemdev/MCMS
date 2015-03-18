@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14D98g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATURES!" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
+                    <rect key="frame" x="20" y="278" width="561" height="163"/>
+                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="56"/>
+                    <color key="textColor" red="0.23137254900000001" green="0.47843137250000001" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newMonster" translatesAutoresizingMaskIntoConstraints="NO" id="guz-Mu-pP9">
+                    <rect key="frame" x="200" y="120" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="230" id="0jH-T7-3xc"/>
+                        <constraint firstAttribute="width" constant="200" id="787-lh-OAM">
+                            <variation key="widthClass=compact" constant="241"/>
+                            <variation key="heightClass=compact-widthClass=compact" constant="230"/>
+                            <variation key="heightClass=regular-widthClass=compact" constant="368"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="230" id="YpN-iW-t2E"/>
+                        <constraint firstAttribute="height" constant="200" id="pcV-T9-QXe">
+                            <variation key="widthClass=compact" constant="241"/>
+                            <variation key="heightClass=compact-widthClass=compact" constant="230"/>
+                            <variation key="heightClass=regular-widthClass=compact" constant="368"/>
+                        </constraint>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="0jH-T7-3xc"/>
+                            <exclude reference="YpN-iW-t2E"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="0jH-T7-3xc"/>
+                            <exclude reference="787-lh-OAM"/>
+                            <include reference="YpN-iW-t2E"/>
+                            <exclude reference="pcV-T9-QXe"/>
+                        </mask>
+                    </variation>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="guz-Mu-pP9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="120" id="7Ei-fw-5oR">
+                    <variation key="widthClass=compact" constant="74"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="35"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="47"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="guz-Mu-pP9" secondAttribute="trailing" constant="85" id="Ggf-Cv-JPB"/>
+                <constraint firstItem="guz-Mu-pP9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="85" id="Jqf-zI-l4x"/>
+                <constraint firstItem="guz-Mu-pP9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="QlA-jD-wss"/>
+                <constraint firstAttribute="bottom" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="159" id="VOT-Pl-cLG"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="guz-Mu-pP9" secondAttribute="bottom" constant="-42" id="W9D-W6-fbW">
+                    <variation key="widthClass=compact" constant="-37"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="13"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                </constraint>
+                <constraint firstItem="guz-Mu-pP9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="200" id="XSG-Yk-H00">
+                    <variation key="widthClass=compact" constant="80"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="85"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" constant="19" id="ZGs-35-FgJ"/>
+                <constraint firstAttribute="trailing" secondItem="guz-Mu-pP9" secondAttribute="trailing" constant="200" id="gHg-A8-P9E">
+                    <variation key="widthClass=compact" constant="79"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="85"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                </constraint>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ipg-dR-p1x"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="guz-Mu-pP9" secondAttribute="bottom" constant="13" id="ojZ-Md-py3"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Ggf-Cv-JPB"/>
+                    <exclude reference="Jqf-zI-l4x"/>
+                    <exclude reference="QlA-jD-wss"/>
+                    <exclude reference="ojZ-Md-py3"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact-widthClass=compact">
+                <mask key="constraints">
+                    <exclude reference="7Ei-fw-5oR"/>
+                    <include reference="Ggf-Cv-JPB"/>
+                    <include reference="Jqf-zI-l4x"/>
+                    <include reference="QlA-jD-wss"/>
+                    <exclude reference="XSG-Yk-H00"/>
+                    <exclude reference="gHg-A8-P9E"/>
+                    <exclude reference="VOT-Pl-cLG"/>
+                    <exclude reference="W9D-W6-fbW"/>
+                    <include reference="ojZ-Md-py3"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="newMonster" width="100" height="100"/>
+    </resources>
+</document>
