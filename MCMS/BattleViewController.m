@@ -58,7 +58,7 @@
     NSInteger winner = arc4random() % fighters.count;
 
     //If the number is 1 or less, you win.
-    if (winner >= 1) {
+    if (winner <= 1) {
         NSLog(@"Winner: %@", self.battleCreature.name);
         [self alertWithWinner:self.battleCreature.name];
 
