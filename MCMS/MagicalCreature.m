@@ -16,6 +16,7 @@
         self.creatureDescription = creatureDesc;
         self.creatImage = creatureImageName;
         self.accessories = accessories;
+        self.creatureSelected = NO;
     }
     return self;
 }

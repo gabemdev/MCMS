@@ -9,10 +9,24 @@
 #import <UIKit/UIKit.h>
 #import "MagicalCreature.h"
 
+@protocol MagicalCreatureDelegate <NSObject>
+
+- (void)selectedCreature:(BOOL)selectedCreature;
+
+@end
+
 @interface CreatureDetailViewController : UIViewController
-@property MagicalCreature *creature;
+
+@property (nonatomic, assign) id<MagicalCreatureDelegate>magicalCreatureDelegate;
+@property MagicalCreature *selectedCreature;
 @property NSMutableArray *creatures;
 @property NSIndexPath *index;
+@property BOOL isSelected;
+
+
+
+
+
 
 
 

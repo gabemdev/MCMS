@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
 @interface MagicalCreature : NSObject
 @property NSString *name;
 @property NSString *creatureDescription;
 @property UIImage *creatImage;
 @property NSMutableArray *accessories;
-@property BOOL isSelected;
-
+@property BOOL creatureSelected;
 
 //Custom initializer. 
 - (instancetype)initWithName:(NSString *)name andDescription:(NSString *)creatureDesc andImage:(UIImage *)creatureImageName andAccessories:(NSMutableArray *)accessories;

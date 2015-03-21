@@ -12,7 +12,7 @@
 #import "BattleViewController.h"
 
 
-@interface MainViewController ()<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface MainViewController ()<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MagicalCreatureDelegate>
 @property NSMutableArray *creatures;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *addCreatureButton;
@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.addCreatureButton.layer.cornerRadius = 3;
     [self.addCreatureButton addTarget:self action:@selector(buttonHighlight:) forControlEvents:UIControlEventTouchDown];
     [self.addCreatureButton addTarget:self action:@selector(buttonNormal:) forControlEvents:UIControlEventTouchUpInside];
@@ -76,6 +77,11 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -88,7 +94,13 @@
     cell.textLabel.text = creatures.name;
     cell.detailTextLabel.text = creatures.creatureDescription;
     cell.imageView.image = creatures.creatImage;
+    if (creatures.creatureSelected == YES) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
 
+    
     return cell;
 }
 
@@ -124,6 +136,13 @@
     }
 }
 
+- (void)selectedCreature:(BOOL)selectedCreature {
+    MagicalCreature *new = [MagicalCreature new];
+    if (selectedCreature) {
+        new.creatureSelected = YES;
+    }
+}
+
 
 
 #pragma mark - Segue
@@ -133,7 +152,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
         CreatureDetailViewController *vc = segue.destinationViewController;
-        vc.creature = creature;
+        vc.selectedCreature = creature;
         vc.creatures = self.creatures;
         vc.index = indexPath;
 
@@ -145,13 +164,13 @@
         vc.fighters = self.creatures;
         vc.index = indexPath;
 
-        if ([playerOne isSelected]) {
+        if (playerOne.creatureSelected == YES) {
             NSLog(@"Player is selected: %@", playerOne.name);
             vc.battleCreature = playerOne;
             vc.battleCreature.name = [[self.creatures objectAtIndex:indexPath.row] name];
             vc.battleCreature.creatImage = [[[self creatures] objectAtIndex:indexPath.row] creatImage];
         } else {
-            playerOne.isSelected = NO;
+            playerOne.creatureSelected = NO;
             NSLog(@"Player not selected");
         }
     }
@@ -166,6 +185,12 @@
 - (void)buttonNormal:(id)sender {
     self.addCreatureButton.backgroundColor = [UIColor colorWithRed:0.23 green:0.47 blue:0.85 alpha:1.00];
 
+}
+
+- (UITableViewCell *)changeAccessoryType:(UITableViewCellAccessoryType)type {
+    UITableViewCell *cell = [UITableViewCell new];
+    cell.accessoryType = type;
+    return cell;
 }
 
 

@@ -47,7 +47,7 @@
 #pragma mark - Actions
 - (IBAction)onCloseButtonTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-    self.battleCreature.isSelected = NO;
+    self.battleCreature.creatureSelected = NO;
 }
 
 - (IBAction)onFightButtonTapped:(id)sender {
